@@ -3,7 +3,8 @@ package es.upm.grise.profundizacion2018.examenFinal;
 import java.util.Calendar;
 
 public class Greeting {
-	
+
+	/*
 	public String getGreeting( Language language ) {
 		// Get current hour
 		Calendar calendar = Calendar.getInstance();
@@ -23,6 +24,23 @@ public class Greeting {
 			moment = TimeOfTheDay.EVENING;
 			
 		// Return the message		
+		return Message.getMessage( moment, language );
+	}*/
+
+	public String getGreeting( Language language ) {
+		// Get current hour
+		MyCalendar calendar = new MyCalendar();
+		int hour = calendar.getHour();
+
+		// Find out the greeting language
+		if ( language == null )
+			language = Message.getDefaultLanguage();
+
+		// Get the moment of the day
+		TimeOfTheDay moment = calendar.getMomentOfTheDay(hour);
+
+
+		// Return the message
 		return Message.getMessage( moment, language );
 	}
 
