@@ -10,11 +10,11 @@ public class MyCalendar {
         this.c = Calendar.getInstance();
     }
 
-    int getHour(){
-        return c.get(Calendar.HOUR_OF_DAY);
+    public int getHour(){
+        return this.c.get(Calendar.HOUR_OF_DAY);
     }
 
-    TimeOfTheDay getMomentOfTheDay(int h){
+    public TimeOfTheDay getMomentOfTheDay(int h){
         TimeOfTheDay t;
         if( h < 12 )
             t = TimeOfTheDay.MORNING;

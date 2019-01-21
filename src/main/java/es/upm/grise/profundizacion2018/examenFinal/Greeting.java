@@ -27,17 +27,23 @@ public class Greeting {
 		return Message.getMessage( moment, language );
 	}*/
 
+	public MyCalendar calendar;
+	public Greeting(MyCalendar c){
+		this.calendar = c;
+	}
+
 	public String getGreeting( Language language ) {
 		// Get current hour
-		MyCalendar calendar = new MyCalendar();
-		int hour = calendar.getHour();
+		//this.calendar.getHour();
+		//MyCalendar calendar = new MyCalendar();
+		int hour = this.calendar.getHour();
 
 		// Find out the greeting language
 		if ( language == null )
 			language = Message.getDefaultLanguage();
 
 		// Get the moment of the day
-		TimeOfTheDay moment = calendar.getMomentOfTheDay(hour);
+		TimeOfTheDay moment = this.calendar.getMomentOfTheDay(hour);
 
 
 		// Return the message
